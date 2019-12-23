@@ -5,7 +5,7 @@
  *   photo SpaceX rocket launch(Elon Musk's Company).
  *   beautiful images of space from [Hubble Telescope](https://hubblesite.org). 
  *   upload them to your account [instagram](https://www.instagram.com).
-
+***
 ### Installation:
 
 Python3 should be already installed. 
@@ -14,6 +14,7 @@ Then use pip (or pip3, if there is a conflict with Python2) to install dependenc
 ```
 pip install -r requirements.txt
 ```
+***
 ### Setup:
 To upload to instagram, you need an account and a token.
 * get an instagram account: register in https://www.instagram.com
@@ -27,7 +28,7 @@ To upload to instagram, you need an account and a token.
  YOUR_LOGIN=your login
  YOUR_PASSWORD=your password
 ```
-
+***
 ## Launch: 
    Work is done on the command line.
    There are 3 scripts in the repository.
