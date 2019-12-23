@@ -1,10 +1,10 @@
 # upload_photos_from_space_to_instagram
 
 ### project objective: 
- * download photos on the theme of space.
-       photo SpaceX rocket launch(Elon Musk's Company).
-       beautiful images of space from [Hubble Telescope](https://hubblesite.org). 
- * upload them to your account [instagram](https://www.instagram.com).
+ #### download photos on the theme of space.
+ *   photo SpaceX rocket launch(Elon Musk's Company).
+ *   beautiful images of space from [Hubble Telescope](https://hubblesite.org). 
+ *   upload them to your account [instagram](https://www.instagram.com).
 
 ### Installation:
 
@@ -31,12 +31,13 @@ To upload to instagram, you need an account and a token.
 ## Launch: 
    Work is done on the command line.
    There are 3 scripts in the repository.
-   * ```fetch_spacex_last_launch.py```: downloads photos from Last SpaceX rocket launch
+   > fetch_spacex_last_launch.py: downloads photos from Last SpaceX rocket launch.
+   
         To run:  In command line: ``` python fetch_spacex_last_launch.py 'Specify the path to the folder where the photos will be downloaded' ``` 
-   * ```fetch_hubble.py```: downloads photos from the Hubble Telescope collection
+   > fetch_hubble.py: downloads photos from the Hubble Telescope collection.
         To run:  In command line: ```python fetch_hubble.py 'enter a collection name' ```
         the name of the collections: "holiday_cards", "wallpaper", "spacecraft", "news", "printshop", "stsci_gallery".
-   * ```upload_photos_to_instagram.py```: uploads photos to instagram
+   > upload_photos_to_instagram.py: uploads photos to instagram.
    
 
 
