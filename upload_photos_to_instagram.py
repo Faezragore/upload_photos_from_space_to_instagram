@@ -38,7 +38,6 @@ def instabot(your_login,your_password,the_path_to_the_folder):
         timeout = 60
         time.sleep(timeout)
         if isfile(joinpath(the_path_to_the_folder,photo_name_and_extension)):
-		    #find_out_the_size_of_the_picture(the_path_to_the_folder,photo_name_and_extension)
             bot.upload_photo("%s/%s" % (the_path_to_the_folder,photo_name_and_extension), caption="Super Typhoon Maysak ")
 
 def main():
