@@ -28,7 +28,7 @@ To upload to instagram, you need an account and a token.
  YOUR_LOGIN=your login
  YOUR_PASSWORD=your password
 ```
-### !!! #### an important feature of uploading photos to instagram:
+!!! #### an important feature of uploading photos to instagram:
 Before uploading a photo, you need to crop it(make it square).
 Otherwise, instagram will block your account.
 
