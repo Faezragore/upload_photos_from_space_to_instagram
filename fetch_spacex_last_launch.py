@@ -1,7 +1,6 @@
+import os
 import requests
 import pathlib
-import os
-
 
 def function_to_download_pictures(url,filename):
     print(os.getcwd())
@@ -19,7 +18,6 @@ def get_photos_from_SpaceX_launch():
     number_index = number_index[number_index.find('flickr_images'):number_index.find('},"details')]
     return number_index[17:-2].split('","')
 
-
 def fetch_spacex_last_launch():
     list_of_links_to_the_picture = get_photos_from_SpaceX_launch()
     for name , url in enumerate(list_of_links_to_the_picture):
@@ -28,7 +26,6 @@ def fetch_spacex_last_launch():
 		
 def main():
     fetch_spacex_last_launch()
-
 
 if __name__ == '__main__':
     main()
