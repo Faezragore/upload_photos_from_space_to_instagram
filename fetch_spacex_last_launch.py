@@ -16,9 +16,8 @@ def function_to_download_pictures(url, filename):
 def get_photos_from_SpaceX_launch():
     url = 'https://api.spacexdata.com/v3/launches/latest'
     response = requests.get(url, verify=False)
-    number_index = response.text
-    number_index = number_index[number_index.find('flickr_images'):number_index.find('},"details')]
-    return number_index[17:-2].split('","')
+    number_index = response.json()["links"]["flickr_images"]
+    return number_index
 
 
 def fetch_spacex_last_launch():
@@ -27,7 +26,7 @@ def fetch_spacex_last_launch():
         filename = 'spacex%d.jpg' % (name)
         function_to_download_pictures(url, filename)
 
-
+        
 def main():
     fetch_spacex_last_launch()
 
