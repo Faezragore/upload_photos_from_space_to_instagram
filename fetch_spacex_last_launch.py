@@ -25,7 +25,7 @@ def fetch_spacex_last_launch():
         filename = 'spacex%d.jpg' % (name)
         download_pictures(url, filename)
 
-        
+
 def main():
     fetch_spacex_last_launch()
 
