@@ -10,13 +10,6 @@ from instabot import Bot
 load_dotenv()
 
 
-def list_of_files_in_a_folder(the_path_to_the_folder):
-    mypath = "%s" % (the_path_to_the_folder)
-    for photo_name_and_extension in listdir(mypath):
-        if isfile(joinpath(mypath, photo_name_and_extension)):
-            find_out_the_size_of_the_picture(the_path_to_the_folder, photo_name_and_extension)
-
-
 def instabot(your_login, your_password, the_path_to_the_folder):
     bot = Bot()
     bot.login(username=your_login, password=your_password)
@@ -30,7 +23,7 @@ def instabot(your_login, your_password, the_path_to_the_folder):
 def main():
     your_login = os.getenv("LOGIN")
     your_password = os.getenv("LOGIN_PASSWORD")
-    parser = argparse.ArgumentParser(description='Specify the path to the folder where the photos will be downloaded')
+    parser = argparse.ArgumentParser(description='Specify the path to the folder where the photos are located')
     parser.add_argument('path', help='your way to the folder')
     args = parser.parse_args()
     the_path_to_the_folder = args.path
