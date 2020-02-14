@@ -3,7 +3,7 @@ import requests
 import pathlib
 
 
-def function_to_download_pictures(url, filename):
+def download_pictures(url, filename):
     print(os.getcwd())
     path = os.getcwd()
     pathlib.Path('%s/images' % (path)).mkdir(parents=True, exist_ok=True)
@@ -24,7 +24,7 @@ def fetch_spacex_last_launch():
     links_to_the_picture = get_photos_from_SpaceX_launch()
     for name, url in enumerate(links_to_the_picture):
         filename = 'spacex%d.jpg' % (name)
-        function_to_download_pictures(url, filename)
+        download_pictures(url, filename)
 
         
 def main():
