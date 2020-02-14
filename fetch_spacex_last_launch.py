@@ -4,7 +4,6 @@ import pathlib
 
 
 def download_pictures(url, filename):
-    print(os.getcwd())
     path = os.getcwd()
     pathlib.Path('%s/images' % (path)).mkdir(parents=True, exist_ok=True)
     response = requests.get(url, verify=False)
