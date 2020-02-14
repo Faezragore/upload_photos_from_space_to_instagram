@@ -7,7 +7,6 @@ import argparse
 from dotenv import load_dotenv
 from PIL import Image
 from instabot import Bot
-load_dotenv()
 
 
 def upload_images_to_instabot(your_login, your_password, the_path_to_the_folder):
@@ -21,6 +20,7 @@ def upload_images_to_instabot(your_login, your_password, the_path_to_the_folder)
 
 
 def main():
+    load_dotenv()
     your_login = os.getenv("LOGIN")
     your_password = os.getenv("LOGIN_PASSWORD")
     parser = argparse.ArgumentParser(description='Specify the path to the folder where the photos are located')
