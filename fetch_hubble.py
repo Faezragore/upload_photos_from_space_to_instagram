@@ -4,7 +4,7 @@ import argparse
 import requests
 
 
-def output_links_to_the_first_image_in_the_Hubble_API(url):
+def get_links_to_the_first_image_in_the_Hubble_API(url):
     links = []
     response = requests.get(url, verify=False)
     number_index = response.json()["image_files"]
@@ -22,7 +22,7 @@ def download_pictures_from_Hubble(id_image):
     path = os.getcwd()
     pathlib.Path('%s/images' % (path)).mkdir(parents=True, exist_ok=True)
 
-    links = output_links_to_the_first_image_in_the_Hubble_API('http://hubblesite.org/api/v3/image/%s' % (id_image))
+    links = get_links_to_the_first_image_in_the_Hubble_API('http://hubblesite.org/api/v3/image/%s' % (id_image))
     url = links[-1]
     to_show_the_extension_of_the_image(links[-1])
     response = requests.get(url, verify=False)
