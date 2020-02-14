@@ -10,7 +10,7 @@ from instabot import Bot
 load_dotenv()
 
 
-def instabot(your_login, your_password, the_path_to_the_folder):
+def upload_images_to_instabot(your_login, your_password, the_path_to_the_folder):
     bot = Bot()
     bot.login(username=your_login, password=your_password)
     for photo_name_and_extension in listdir(the_path_to_the_folder):
@@ -27,7 +27,7 @@ def main():
     parser.add_argument('path', help='your way to the folder')
     args = parser.parse_args()
     the_path_to_the_folder = args.path
-    instabot(your_login, your_password, the_path_to_the_folder)
+    upload_images_to_instabot(your_login, your_password, the_path_to_the_folder)
 
 
 if __name__ == '__main__':
