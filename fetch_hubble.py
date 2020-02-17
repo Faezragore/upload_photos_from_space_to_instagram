@@ -15,7 +15,7 @@ def get_links_to_the_first_image_in_the_Hubble_API(url):
 
 
 def return_the_image_extension(url):
-    return url.split('.')[-1]
+    return os.path.splitext(url)[1]
 
 
 def download_pictures_from_Hubble(id_image):
