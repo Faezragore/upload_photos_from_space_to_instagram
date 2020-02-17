@@ -14,7 +14,7 @@ def get_links_to_the_first_image_in_the_Hubble_API(url):
     return links
 
 
-def to_show_the_extension_of_the_image(url):
+def return_the_image_extension(url):
     return url.split('.')[-1]
 
 
@@ -24,7 +24,7 @@ def download_pictures_from_Hubble(id_image):
 
     links = get_links_to_the_first_image_in_the_Hubble_API('http://hubblesite.org/api/v3/image/%s' % (id_image))
     url = links[-1]
-    to_show_the_extension_of_the_image(links[-1])
+    return_the_image_extension(links[-1])
     response = requests.get(url, verify=False)
 
     with open('%s/images/%s.%s' % (path, id_image, to_show_the_extension_of_the_image(links[-1])), 'wb') as file:
