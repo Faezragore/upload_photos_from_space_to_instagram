@@ -27,7 +27,7 @@ def download_pictures_from_Hubble(id_image):
     return_the_image_extension(links[-1])
     response = requests.get(url, verify=False)
 
-    with open('%s/images/%s.%s' % (path, id_image, to_show_the_extension_of_the_image(links[-1])), 'wb') as file:
+    with open('%s/images/%s.%s' % (path, id_image, return_the_image_extension(url)), 'wb') as file:
         file.write(response.content)
 
 
