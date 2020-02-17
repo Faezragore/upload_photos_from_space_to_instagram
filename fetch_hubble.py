@@ -7,10 +7,10 @@ import requests
 def get_links_to_the_first_image_in_the_Hubble_API(url):
     links = []
     response = requests.get(url, verify=False)
-    number_index = response.json()["image_files"]
+    links_to_images = response.json()["image_files"]
 
-    for i in number_index:
-        links.append('http:' + i["file_url"])
+    for link in links_to_images:
+        links.append('http:' + link["file_url"])
     return links
 
 
