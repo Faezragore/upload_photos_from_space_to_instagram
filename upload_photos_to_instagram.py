@@ -9,25 +9,31 @@ from PIL import Image
 from instabot import Bot
 
 
-def upload_images_to_instabot(your_login, your_password, the_path_to_the_folder):
+def upload_images_to_instabot(
+     your_login, your_password, the_path_to_the_folder):
     bot = Bot()
     bot.login(username=your_login, password=your_password)
     for photo_name_and_extension in listdir(the_path_to_the_folder):
         timeout = 60
         time.sleep(timeout)
         if isfile(joinpath(the_path_to_the_folder, photo_name_and_extension)):
-            bot.upload_photo("%s/%s" % (the_path_to_the_folder, photo_name_and_extension), caption="Super Typhoon Maysak ")
+            bot.upload_photo("%s/%s" % (
+                the_path_to_the_folder, photo_name_and_extension),
+                caption="Super Typhoon Maysak ")
 
 
 def main():
     load_dotenv()
     your_login = os.getenv("LOGIN")
     your_password = os.getenv("LOGIN_PASSWORD")
-    parser = argparse.ArgumentParser(description='Specify the path to the folder where the photos are located')
+    parser = argparse.ArgumentParser(
+             description='Specify the path to the folder + /
+             where the photos are located')
     parser.add_argument('path', help='your way to the folder')
     args = parser.parse_args()
     the_path_to_the_folder = args.path
-    upload_images_to_instabot(your_login, your_password, the_path_to_the_folder)
+    upload_images_to_instabot(
+        your_login, your_password, the_path_to_the_folder)
 
 
 if __name__ == '__main__':
