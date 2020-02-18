@@ -18,16 +18,19 @@ def download_picture_from_Hubble(id_image):
     path = os.getcwd()
     pathlib.Path('%s/images' % (path)).mkdir(parents=True, exist_ok=True)
 
-    links = get_links_to_the_first_image_in_the_Hubble_API('http://hubblesite.org/api/v3/image/%s' % (id_image))
+    links = get_links_to_the_first_image_in_the_Hubble_API(
+            'http://hubblesite.org/api/v3/image/%s' % (id_image))
     url = links[-1]
     response = requests.get(url, verify=False)
 
-    with open('%s/images/%s.%s' % (path, id_image, os.path.splitext(url)[1]), 'wb') as file:
+    with open('%s/images/%s.%s' % (
+              path, id_image, os.path.splitext(url)[1]), 'wb') as file:
         file.write(response.content)
 
 
-def download_the_collection_of_pictures_API_hubble(the_name_of_the_collection):
-    url = 'http://hubblesite.org/api/v3/images/%s?page=all' % (the_name_of_the_collection)
+def download_the_collection_of_pictures_API_hubble():
+    url = 'http://hubblesite.org/api/v3/images/%s?page=all' % (
+          name_of_collection)
     response = requests.get(url, verify=False)
     id_images = response.json()
 
