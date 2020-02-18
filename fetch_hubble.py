@@ -34,8 +34,8 @@ def download_the_collection_of_pictures_API_hubble():
     response = requests.get(url, verify=False)
     id_images = response.json()
 
-    for id_image in id_images:
-        download_picture_from_Hubble(id_image["id"])
+    for image_id in images_id:
+        download_picture_from_Hubble(image_id["id"])
 
 
 def main():
